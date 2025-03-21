@@ -1,0 +1,22 @@
+# OS files
+.DS_Store
+
+# Log files
+*.log
+
+# Dependencies
+node_modules
+
+# Generated files
+**/.cognito
+.cdk.staging
+cdk.out
+**/bin/**/*.d.ts
+**/bin/**/*.js
+**/bin/**/*.js.map
+**/lib/**/*.d.ts
+**/lib/**/*.js
+lambda-layer/nodejs/**
+/.idea/
+/local-test-infra/.cognito/
+/local-test-infra/.cognito/
