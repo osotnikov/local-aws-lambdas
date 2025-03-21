@@ -1,0 +1,24 @@
+{
+  "name": "signInLambda",
+  "private": true,
+  "version": "0.0.1",
+  "main": "bin/signInLambda.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.145",
+    "@types/jest": "29.5.13",
+    "@types/node": "22.7.6",
+    "jest": "29.7.0",
+    "ts-jest": "29.2.5",
+    "typescript": "5.6.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "3.675.0",
+    "@aws-sdk/client-lambda": "3.675.0",
+    "@osotnikov/lambda-common": "1.0.0",
+    "date-fns": "4.1.0"
+  }
+}

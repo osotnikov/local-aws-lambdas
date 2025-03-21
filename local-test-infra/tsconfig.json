@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "module": "commonjs",
+    "strict": false,
+    "target": "ES2018",
+    "outDir": "bin"
+  },
+  "exclude": ["bin", "cdk.out", "**/__tests__"]
+}

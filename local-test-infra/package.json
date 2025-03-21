@@ -1,0 +1,36 @@
+{
+  "name": "cloud-infrastructure",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "build": "tsc",
+    "deploy": "cdk deploy",
+    "destroy": "setup-scripts/destroy.sh",
+    "diff": "cdk diff",
+    "synth": "cdk synth",
+    "test": "jest",
+    "watch": "tsc -w",
+    "samin": "sam local invoke -t ./cdk.out/YarnWorkspaceLambdaLayer.template.json signUpLambda",
+    "samsa": "sam local start-api --docker-network lambda-net -t ./cdk.out/YarnWorkspaceLambdaLayer.template.json",
+    "samsl": "sam local start-lambda --docker-network lambda-net -t ./cdk.out/YarnWorkspaceLambdaLayer.template.json",
+    "ddb_local": "docker run --rm --name ddb --network lambda-net -p 8000:8000 amazon/dynamodb-local -jar DynamoDBLocal.jar -sharedDb",
+    "init": "setup-scripts/init.sh"
+  },
+  "devDependencies": {
+    "@types/convict": "6.1.6",
+    "@types/http-errors": "2.0.4",
+    "@types/jest": "29.5.13",
+    "@types/node": "22.7.6",
+    "@types/uuid": "10.0.0",
+    "aws-cdk": "2.162.1",
+    "jest": "29.7.0",
+    "ts-jest": "29.2.5",
+    "typescript": "5.6.3"
+  },
+  "dependencies": {
+    "@types/jest": "29.5.13",
+    "aws-cdk-lib": "2.162.1",
+    "constructs": "10.4.2"
+  },
+  "packageManager": "yarn@4.7.0"
+}

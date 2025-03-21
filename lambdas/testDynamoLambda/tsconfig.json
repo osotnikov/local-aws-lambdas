@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "outDir": "bin",
+    "strict": true,
+    "target": "ES2018"
+  },
+  "exclude": ["**/__tests__"]
+}
