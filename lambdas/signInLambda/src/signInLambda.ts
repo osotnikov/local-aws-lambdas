@@ -35,8 +35,10 @@ function getCognitoIdentityProviderClient() {
   console.log(`region: ${process.env.AWS_REGION}`)
   const cogIdpClInp: CognitoIdentityProviderClientConfig = {
     region: process.env.AWS_REGION,
-    endpoint: "http://cog:9229/",
-  } as CognitoIdentityProviderClientConfig;
+  }
+  if (process.env.LOCAL_TESTING) {
+    cogIdpClInp["endpoint"] = "http://cog:9229/";
+  }
   return new CognitoIdentityProviderClient(cogIdpClInp);
 }
 

@@ -41,9 +41,11 @@ export const signUpLambda: Handler = async (event: APIGatewayProxyEventBase<APIG
 function getCognitoIdentityProviderClient() {
     console.log(`region: ${process.env.AWS_REGION}`)
     const cogIdpClInp: CognitoIdentityProviderClientConfig = {
-        region: process.env.AWS_REGION,
-        endpoint: "http://cog:9229/",
-    } as CognitoIdentityProviderClientConfig;
+      region: process.env.AWS_REGION,
+    }
+    if (process.env.LOCAL_TESTING) {
+      cogIdpClInp["endpoint"] = "http://cog:9229/";
+    }
     return new CognitoIdentityProviderClient(cogIdpClInp);
 }
 

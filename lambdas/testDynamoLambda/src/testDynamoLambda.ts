@@ -19,7 +19,8 @@ export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEven
   event.body;
   customLog(tomorrow);
 
-  const client = new DynamoDBClient({ endpoint: "http://ddb:8000" });
+  let dynamodbConfig = process.env.LOCAL_TESTING ? { endpoint: "http://ddb:8000" } : {}
+  const client = new DynamoDBClient(dynamodbConfig);
   const dynamo: DynamoDBDocumentClient = DynamoDBDocumentClient.from(client);
   console.log('about to write data to dynamodb');
 
